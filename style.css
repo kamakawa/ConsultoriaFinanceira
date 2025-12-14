@@ -1,0 +1,203 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: Arial, sans-serif; 
+}
+
+/* CORES E CORPO */
+body {
+    background-color: #F8F9FA; /* Cinza Gelo (Fundo Clean) */
+    color: #212529; /* Cinza Escuro para o texto principal */
+    line-height: 1.6; 
+}
+
+/* ESTILIZAÇÃO DE LINKS E LISTAS */
+a {
+    text-decoration: none; 
+    color: #003366;
+    transition: color 0.3s; 
+}
+
+a:hover {
+    color: #00AEEF; 
+}
+
+ul {
+    list-style: none; /* Remove as bolinhas da lista */
+}
+
+#home, #servicos, #equipe, #investimentos, #blog {
+    padding: 50px 10%; 
+    margin-bottom: 40px; 
+    background-color: white; /* Define fundo branco para a seção, contrastando com o body */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para elevação */
+}
+
+h1 {
+    color: #003366; 
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+h2 { /* Títulos das Seções*/
+    color: #003366;
+    font-size: 2em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #E0E0E0; /* Linha de divisão */
+    padding-bottom: 10px;
+}
+
+h3 { /* Títulos dos Cards*/
+    color: #003366;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#menu-horizontal {
+    background-color: #FFFFFF; 
+    border-bottom: 3px solid #003366; 
+    padding: 10px 10%;
+    position: sticky; /* Fixa o menu no topo ao rolar */
+    top: 0;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+#menu-horizontal ul {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+}
+
+#menu-horizontal li a {
+    color: #003366; 
+    padding: 10px 15px; 
+    display: block; 
+    font-weight: bold;
+}
+
+#menu-horizontal li a:hover {
+    background-color: #E0E0E0; 
+    border-radius: 5px;
+}
+
+#menu-vertical {
+    width: 200px; 
+    background-color: #f1f1f1;
+    padding: 10px 0;
+    margin-right: 20px;
+}
+
+#menu-vertical li a {
+    color: #212529; 
+    padding: 10px 20px;
+    display: block;
+    border-bottom: 1px solid #D0D0D0; 
+}
+
+#menu-vertical li:last-child a {
+    border-bottom: none; 
+}
+
+#menu-vertical li a:hover {
+    background-color: #003366;
+    color: white; 
+}
+
+#home {
+    text-align: center; 
+    padding: 80px 10%;
+    margin-top: 20px; /* Separar do menu fixo */
+}
+
+#home h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#home h3 { 
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.btn-principal {
+    display: inline-block;
+    background-color: #00AEEF; 
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-principal:hover {
+    background-color: #0088CC; 
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin-top: 30px;
+}
+
+.servico-card, .equipe-card {
+    background-color: #F9F9F9; /* Fundo levemente diferente para destacar */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
+    transition: transform 0.3s;
+}
+
+.servico-card:hover, .equipe-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 51, 102, 0.15);
+}
+
+#servicos .servico-card {
+    width: calc(25% - 20px); 
+}
+
+#equipe .equipe-card {
+    width: calc(20% - 20px); 
+}
+
+
+@media (max-width: 768px) {
+    
+    /* Reajuste do espaçamento em telas menores */
+    #home, #servicos, #equipe, #investimentos, #blog {
+        padding: 30px 5%; 
+    }
+
+    /* Menus: Empilhar itens do menu horizontal */
+    #menu-horizontal ul {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    #menu-horizontal li {
+        width: 100%; 
+        text-align: center; /* Centraliza o link na tela mobile */
+    }
+    
+    /* Conteúdo: Mudar cards para 100% de largura (1 coluna) */
+    #servicos .servico-card,
+    #equipe .equipe-card {
+        width: 100%; 
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    /* Esconde o menu vertical (sidebar) no mobile para economizar espaço */
+    #menu-vertical {
+        display: none; 
+    }
+}
